@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+
+		<head>
+		
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+			
+				
+				<style type="text/css">
+				body{
+					background: #393318;
+				}
+				.wrapper{
+					width:900px;
+					height:600px;
+					margin:auto;
+				
+					position:relative;
+					top:20px;
+					
+					background: #fff;
+				}
+				.header
+				{
+					    margin: auto;
+						width: 118px;
+						font-weight: bold;
+						font-size: 14px;
+						position: relative;
+						top: 10px;	
+				}
+				.content{
+				  
+				    top: 34px;
+					position: relative;
+					margin: auto;
+					width: 400px;
+					height: 100px;
+					
+				}
+				.content1,.content2
+				{
+							float: left;
+							margin-right: 10px;
+							font-size: 14px;
+							font-weight: normal;
+							color: #c21500;
+							margin-left: 3px;
+						
+				}
+				.effects_area,.para_area{
+					    margin: auto;
+						width: 80px;
+						margin-top: 35px;
+						width: 88%;
+						height: 34px;
+				}
+				button{
+						    background: #893AA4;
+							color: #fff;
+							margin-left: 10px;
+							    float: left;
+							border: 1px solid #893AA4;
+							height:30px;
+							    margin-top: 2px;
+							
+							
+				}
+				.text_area
+				{
+					width: 90%;
+					margin: auto;
+					border: 1px solid #001f3f;
+					margin-top: 14px;
+					word-wrap: break-word;
+					font-weight: bold;
+					color: #85144b;
+				}
+				.newClass
+					{
+						color: #3D9970;
+						width: 80%;
+					}
+				.css_area
+				{
+					    width: 50%;
+						margin: auto;
+						margin-top: 25px;
+				}
+				
+				</style>
+				
+				
+		</head>
+
+<body onload="">
+		<div class="wrapper" id="out_wrap">
+				<div class="header">
+				jQuery in action
+				</div>
+			<div class="content">
+			
+				<div class="content1">
+					<p id="text1">I am paragraph content</p>
+				</div>
+				
+			</div>
+			
+			<div class="effects_area">
+					<button id="get_content">GetContent</button>
+					<button id="set_content">SetContent</button>
+					<button id="add_content">AddNewContent</button>
+					<button id="AddHtml">AddHtml</button>
+					<button id="AddHtmlAfter">AddHtmlAfter</button>
+					<button id="AddHtmlBefore">AddHtmlBefore</button>
+					
+				</div>
+				
+				<div class="text_area">
+						<p>It was created to make it easier and simpler to write JavaScript and HTML. JQuery works on most web browsers. It was invented by John Resig. The first release was in January 2006 at BarCamp NYC.</p>
+						
+						<p>It is currently maintained by a team of developers led by Timmy Willison (with the jQuery selector engine, Sizzle, being led by Richard Gibson).
+						</p>
+				</div>
+				
+					<div class="css_area">
+					<button id="AddClass">AddClass</button>
+					<button id="RemoveClass">RemoveClass</button>
+					<button id="AddCss">AddCss</button>
+					</div>
+				
+		</div>
+		<script>
+			// once the dom is loaded jQuery should be in action
+			$(document).ready(function(){
+				//alert("ready done " + $("#show_area"));
+					$( "#get_content" ).click(function()
+											{
+												var textValue=$(".content1").text();
+												alert(" content " + textValue);
+												
+												//$(".content1").toggle();
+											});
+					
+					$( "#set_content" ).click(function()
+											{
+											// callback method : callMe()
+												$("#text1").text("I am new Paragraph");
+											});	
+					$( "#add_content" ).click(function()
+											{
+											// callback method : callMe()
+												$("#text1").append(" getting added at end");
+											});						
+											
+					$( "#AddHtml" ).click(function()
+											{
+											// callback method : callMe()
+												$(".content1").append("<p> I am a new paragraph</p>");
+											});	
+					$( "#AddHtmlAfter" ).click(function()
+											{
+											// callback method : callMe()
+$(".content1").after("<div class='content2'><p> I am a new paragraph at end </p></div>");
+											});	
+					$( "#AddHtmlBefore" ).click(function()
+											{
+											// callback method : callMe()
+$(".content1").before("<div class='content2'><p> I am a new paragraph at front </p></div>");
+											});	
+
+					$( "#AddClass" ).click(function()
+											{
+											// callback method : callMe()
+												$(".text_area").addClass("newClass");
+											});	
+					$( "#RemoveClass" ).click(function()
+											{
+											// callback method : callMe()
+												$(".text_area").removeClass("newClass");
+											});	
+					$( "#AddCss" ).click(function()
+											{
+											// callback method : callMe()
+												$(".text_area>p").css({"margin-left":'3px',
+																	"margin-right":'2px'
+																	});
+											});							
+												
+																
+			});
+			
+			
+		</script>
+</body>
+
+</html>
